@@ -1,0 +1,5 @@
+{% extends "requests_app/base.html" %}
+{% block content %}<h2>{{ item.title }}</h2>
+<p>{{ item.description }}</p><p>Category: {{ item.get_category_display }}</p>
+<p>Status: {{ item.get_status_display }}</p><p>Priority: {{ item.get_priority_display }}</p>
+<p>Due: {{ item.due_at|default:"Not set" }}</p>{% endblock %}

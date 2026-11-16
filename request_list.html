@@ -1,0 +1,5 @@
+{% extends "requests_app/base.html" %}
+{% block content %}<h2>My service requests</h2>
+<ul>{% for item in requests %}
+<li><a href="{% url 'request_detail' item.pk %}">{{ item.title }}</a> — {{ item.get_status_display }}</li>
+{% empty %}<li>No requests yet.</li>{% endfor %}</ul>{% endblock %}
